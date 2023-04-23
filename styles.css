@@ -1,10 +1,17 @@
 /* full page styling */
 
+@media (max-width: 850px) {
+    * {
+        background-color: purple;
+    }
+}
+
 body {
     margin: 0px;
     padding: 0px;
     width: 100vw;
     height: 100vh;
+    position: static;
     background-color: #acbec8;
     font-family: 'Roboto Flex', sans-serif;
     display: flex;
@@ -31,7 +38,7 @@ nav {
     align-items: center;
 }
 
-nav a {
+nav a[href="#"] {
     color: black;
     text-decoration: none;
     text-align: center;
@@ -41,13 +48,14 @@ nav a:hover {
     color: gray;
 }
 
-nav a:active {
+nav > a:active {
     color: black;
 }
 
 /* body styling */
 
 .page-body {
+    position: relative;
     width: 65vw;
     margin: auto;
 }
@@ -56,14 +64,16 @@ nav a:active {
     margin-bottom: 30px;
 }
 
-#one {
+.heading h1 ~ h2 {
+    font-style: italic;
+}
+
+h2.one {
     margin: -10px 0px 0px 0px;
-    padding: 0px 0px 0px 0px;
 }
 
 #two {
     margin: 0px 0px 0px 0px;
-    padding: 0px 0px 0px 0px;
 }
 
 .text-section {
@@ -108,6 +118,48 @@ nav a:active {
     margin-bottom: 10px;
 }
 
-.input-inline input {
-    margin-right: 50px;
+.input-inline label + input {
+    margin-right: 5pc;
+}
+
+/* footer styling */
+
+.footer {
+    width: 95vw;
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+    grid-template-rows: 100%;
+    justify-items: center;
+    align-items: center;
+}
+
+.footer img {
+    width: 24pt;
+    height: 24pt;
+}
+
+.grid1 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.grid2 {
+    text-align: center;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.grid3 {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+#thankyou {
+    display: none;
 }
